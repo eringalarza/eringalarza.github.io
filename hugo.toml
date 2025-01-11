@@ -1,169 +1,78 @@
-baseURL = "https://www.eringalarza.com"
-languageCode = "en"
-theme = "adritian-free-hugo-theme"
+baseURL = 'https://www.eringalarza.com'
+languageCode = 'en-us'
+title = 'Erin Galarza'
+theme = 'typo'
+
+[taxonomies]
+tag = 'tags'
 
 [params]
+# Home meta description
+description = "A tech-oriented personal blog curated by Francesco Tomaselli."
 
-  title = 'Erin Galarza'
-  description = ''
-  images = ['/img/og-img.png']
-  sections = ["showcase", "about", "education", "experience", "client-and-work", "testimonial", "contact", "newsletter"]
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
 
-  homepageExperienceCount = 6
-
-  [params.analytics]
-  ## Analytics parameters.
-  ### Supported so far: Vercel (Page Insights, Analytics)
-  ### And Google (Tag Manager, Analytics)
-
-  # controls vercel page insights - disabled by default
-  # to enable, just set to true
-  vercelPageInsights = false
-  vercelAnalytics = false
-  
-  # google analytics and tag manager. to enable, set "enabled" to true
-  # and add the tracking code (UA-something for analytics, GTM-something for tag manager)
-  [params.analytics.googleAnalytics]
-      code = "UA-XXXXX-Y"
-      enabled = false
-  [params.analytics.googleTagManager]
-      code = "GTM-XXXXX"
-      enabled = false
-
-[build]
-  [build.buildStats]
-    disableClasses = false
-    disableIDs = false
-    disableTags = false
-    enable = true
-
-[params.languages.selector.disable]
-  footer = false
-
-[languages]
-  [languages.en]
-    disabled = false
-    languageCode = 'en'
-    languageDirection = 'ltr'
-    languageName = 'English'
-    title = ''
-    weight = 0
-
-    [languages.en.menus]
-      [[languages.en.menus.header]]
-        name = 'About'
-        URL = '#about'
-        weight = 2
-      [[languages.en.menus.header]]
-        name = 'Portfolio'
-        URL = '#portfolio'
-        weight = 3
-
-      [[languages.en.menus.header]]
-        name = "Contact"
-        URL = "#contact"
-        weight = 6
-
-      [[languages.en.menus.footer]]
-        name = "About"
-        URL = "#about"
-        weight = 2
-
-      [[languages.en.menus.footer]]
-        name = "Portfolio"
-        URL = "#portfolio"
-        weight = 3
-
-      [[languages.en.menus.footer]]
-        name = "Contact"
-        URL = "#contact"
-        weight = 4
+# Intro on main page, content in markdown
+homeIntroTitle = 'Hi!'
+homeIntroContent = """
+I am an Italian Software Engineer with a strong foundation in computer science and a passion for solving complex problems.
+I am interested in a various topics, including algorithms, distributed systems, databases, and information retrieval. \\
+Feel free to read [about myself](/about) or to look at my [posts](/posts).
+"""
 
 
-  [languages.es]
-    disabled = false
-    languageCode = 'es'
-    languageDirection = 'ltr'
-    languageName = 'Español'
-    title = ''
-    weight = 0
-      [[languages.es.menus.header]]
-        name = 'Sobre mi'
-        URL = '/es/#about'
-        weight = 2
-      [[languages.es.menus.header]]
-        name = 'Portfolio'
-        URL = '/es/#portfolio'
-        weight = 3
+singleDateFormat = '2 Jan 2006'
 
-      #  [[languages.es.menus.header]]
-      #  name = "Experiencia"
-      #  URL = "/es/#experience"
-      #  weight = 4
+# Collection to display on home
+# homeCollectionTitle = 'Posts'
+# homeCollection = 'posts'
 
-      [[languages.es.menus.header]]
-        name = "Blog"
-        URL = "/es/blog"
-        weight = 5
+# Lists parameters
+paginationSize = 100
+listSummaries = true
+listDateFormat = '02 Jan 2006'
 
-      [[languages.es.menus.header]]
-        name = "Contacto"
-        URL = "/es/#contact"
-        weight = 6
+# Breadcrumbs
+breadcrumbs = true
 
-      [[languages.es.menus.footer]]
-        name = "Sobre mi"
-        URL = "/es/#about"
-        weight = 2
+showFooter = true
+# footerContent = """Custom"""
 
-      [[languages.es.menus.footer]]
-        name = "Portfolio"
-        URL = "/es/#portfolio"
-        weight = 3
+# Social icons
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/eringalarza/"
 
-      [[languages.es.menus.footer]]
-        name = "Contact"
-        URL = "/es/#contact"
-        weight = 4
+# Main menu pages
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "about"
+url = "/about"
+
+# [[params.menu]]
+# name = "tags"
+# url = "/tags"
 
 
-      
-  
+# Syntax highlight on code blocks
+[markup]
+[markup.highlight]
+style = 'bw'
 
-# Plugins
-[params.plugins]
+# Deploy settings
 
-  # CSS Plugins
-  [[params.plugins.css]]
-  URL = "css/custom.css"
-  [[params.plugins.css]]
-  URL = "css/adritian-icons.css"
-  
-  # JS Plugins
-  [[params.plugins.js]]
-  URL = "js/rad-animations.js"
-  [[params.plugins.js]]
-  URL = "js/sticky-header.js"
-  [[params.plugins.js]]
-  URL = "js/library/fontfaceobserver.js"
+[[deployment.matchers]]
+pattern = "^.+\\.(js|css|svg|ttf|woff2)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = true
 
-  # SCSS Plugins
-  [[params.plugins.scss]]
-  URL = "scss/adritian.scss"
-
-
-# theme/color style 
-[params.colorTheme]
-
-## the following configuration would disable automatic theme selection
-#  [params.colorTheme.auto]
-#    disable = true
-#  [params.colorTheme.forced]
-#    theme = "dark"
-
-## the following parameter will disable theme override in the footer
-#  [params.colorTheme.selector.disable]
-#  footer = true
-
-
-## by default we allow override AND automatic selection
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg|gif|webp)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
