@@ -8,7 +8,7 @@ tag = 'tags'
 
 [params]
 # Home meta description
-description = "A tech-oriented personal blog curated by Francesco Tomaselli."
+description = ""
 
 # Appearance settings
 theme = 'auto'
@@ -16,11 +16,23 @@ colorPalette = 'default'
 hideHeader = false
 
 # Intro on main page, content in markdown
-homeIntroTitle = 'Hi!'
+homeIntroTitle = 'Hi there,'
 homeIntroContent = """
-I am an Italian Software Engineer with a strong foundation in computer science and a passion for solving complex problems.
-I am interested in a various topics, including algorithms, distributed systems, databases, and information retrieval. \\
-Feel free to read [about myself](/about) or to look at my [posts](/posts).
+I’m Erin Galarza. I’m a product and design leader with over 10 years
+of hands-on experience in creating user-centric, regulatory-compliant digital
+solutions in complex industries. As both an individual contributor and leader, I
+excel at designing complex systems, refining user experiences, and architecting
+frameworks that drive product excellence. My unique strength lies in seamlessly
+transitioning between deep technical design work and strategic leadership,
+enabling me to lead multidisciplinary teams while maintaining a strong
+connection to the craft.
+
+Throughout my career, I’ve led teams, mentored designers/product managers, and
+delivered successful products across various industries. I’m passionate about
+finding practical solutions that drive efficiency and innovation.
+
+Feel free to connect if you’d like to discuss potential collaborations or learn
+more about what I do.
 """
 
 
@@ -47,13 +59,6 @@ name = "linkedin"
 url = "https://www.linkedin.com/in/eringalarza/"
 
 # Main menu pages
-[[params.menu]]
-name = "home"
-url = "/"
-
-[[params.menu]]
-name = "about"
-url = "/about"
 
 # [[params.menu]]
 # name = "tags"
